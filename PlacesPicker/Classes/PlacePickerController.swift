@@ -10,9 +10,9 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-public class PlacePickerController: UIViewController, PlacesDataSourceDelegate {
+@objc open class PlacePickerController: UIViewController, PlacesDataSourceDelegate {
     // Public
-    public unowned var delegate: PlacesPickerDelegate?
+    @objc public unowned var delegate: PlacesPickerDelegate?
     
     public override func loadView() {
         self.view = PlacePickerView(frame: CGRect.zero)
@@ -95,11 +95,11 @@ public class PlacePickerController: UIViewController, PlacesDataSourceDelegate {
         pickerView.mapView.animate(to: position)
     }
     
-    internal func placePickerDidSelectPlace(place: GMSPlace) {
+    public func placePickerDidSelectPlace(place: GMSPlace) {
         delegate?.placePickerController(controller: self, didSelectPlace: place)
     }
     
-    internal func autoCompleteControllerDidProvide(place: GMSPlace) {
+    public func autoCompleteControllerDidProvide(place: GMSPlace) {
         focusOn(coordinate: place.coordinate)
     }
 }

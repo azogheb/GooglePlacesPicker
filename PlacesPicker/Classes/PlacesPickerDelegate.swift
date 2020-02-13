@@ -9,7 +9,7 @@
 import Foundation
 import GooglePlaces
 
-public protocol PlacesPickerDelegate: class {
+@objc public protocol PlacesPickerDelegate: class {
     func placePickerController(controller: PlacePickerController, didSelectPlace place: GMSPlace)
     func placePickerControllerDidCancel(controller: PlacePickerController)
 }

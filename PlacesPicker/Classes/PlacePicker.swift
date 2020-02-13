@@ -10,16 +10,16 @@ import Foundation
 import GoogleMaps
 import GooglePlaces
 
-public class PlacePicker {
+@objc open class PlacePicker : NSObject {
     static var googleMapsKey: String?
     
-    public static func configure(googleMapsAPIKey: String, placesAPIKey: String) {
+    @objc  public static func configure(googleMapsAPIKey: String, placesAPIKey: String) {
         GMSServices.provideAPIKey(googleMapsAPIKey)
         GMSPlacesClient.provideAPIKey(placesAPIKey)
         googleMapsKey = googleMapsAPIKey
     }
     
-    public static func placePickerController(config: PlacePickerConfig = PlacePickerConfig.default) -> PlacePickerController {
+    @objc public static func placePickerController(config: PlacePickerConfig = PlacePickerConfig.defaultConfig()) -> PlacePickerController {
         return PlacePickerController.controler(config: config)
     }
 }

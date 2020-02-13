@@ -9,7 +9,7 @@
 import Foundation
 import GooglePlaces
 
-public struct PlacePickerConfig {
+@objc public class PlacePickerConfig : NSObject {
     public let listRenderer: PlacesListRenderer
     public let placeFields: GMSPlaceField
     public let pickerRenderer: PickerRenderer
@@ -17,7 +17,7 @@ public struct PlacePickerConfig {
     public let initialCoordinate: CLLocationCoordinate2D?
     public let initialZoom: Float
     
-    public static var `default`: PlacePickerConfig {
+    @objc public static func defaultConfig() -> PlacePickerConfig {
         return PlacePickerConfig()
     }
     

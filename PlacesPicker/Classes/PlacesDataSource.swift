@@ -11,12 +11,12 @@ import CoreLocation
 import GooglePlaces
 import GoogleMaps
 
-protocol PlacesDataSourceDelegate: class {
+@objc public protocol PlacesDataSourceDelegate {
     func placePickerDidSelectPlace(place: GMSPlace)
     func autoCompleteControllerDidProvide(place: GMSPlace)
 }
 
-class PlacesDataSource: NSObject {
+open class PlacesDataSource: NSObject {
     weak var tableView: UITableView?
     weak var delegate: PlacesDataSourceDelegate?
     
