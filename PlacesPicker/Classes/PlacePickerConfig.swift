@@ -21,6 +21,11 @@ import GooglePlaces
         return PlacePickerConfig()
     }
     
+    @objc public static func initWithInitialCoordinate(initialCoordinate: CLLocationCoordinate2D) -> PlacePickerConfig {
+    
+        return PlacePickerConfig.init(initialCoordinate: initialCoordinate)
+    }
+    
     public init(listRenderer: PlacesListRenderer = DefaultPlacesListRenderer(),
                 placeFields: GMSPlaceField = GMSPlaceField.defaultFields,
                 placesFilter: GMSAutocompleteFilter? = nil,
@@ -46,4 +51,3 @@ extension GMSPlaceField {
                                        UInt(GMSPlaceField.photos.rawValue))!
     }
 }
-
