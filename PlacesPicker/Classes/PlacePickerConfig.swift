@@ -11,14 +11,19 @@ import GooglePlaces
 
 @objc public class PlacePickerConfig : NSObject {
     public let listRenderer: PlacesListRenderer
-    public let placeFields: GMSPlaceField
+    @objc public let placeFields: GMSPlaceField
     public let pickerRenderer: PickerRenderer
-    public let placesFilter: GMSAutocompleteFilter?
+    @objc public let placesFilter: GMSAutocompleteFilter?
     public let initialCoordinate: CLLocationCoordinate2D?
-    public let initialZoom: Float
+    @objc public let initialZoom: Float
     
     @objc public static func defaultConfig() -> PlacePickerConfig {
         return PlacePickerConfig()
+    }
+    
+    @objc public static func initWithInitialCoordinate(initialCoordinate: CLLocationCoordinate2D) -> PlacePickerConfig {
+    
+        return PlacePickerConfig.init(initialCoordinate: initialCoordinate)
     }
     
     public init(listRenderer: PlacesListRenderer = DefaultPlacesListRenderer(),
