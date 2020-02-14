@@ -130,7 +130,7 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "GoogleMaps", "~> 3.1.0"
-  spec.dependency "GooglePlaces", "~> 3.1.0"
+  spec.dependency "GoogleMaps", "~> 3.7.0"
+  spec.dependency "GooglePlaces", "~> 3.7.0"
 
 end
